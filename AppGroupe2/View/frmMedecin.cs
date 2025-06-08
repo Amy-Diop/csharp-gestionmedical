@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppGroupe2.Model;
 using Microsoft.EntityFrameworkCore;
+using AppGroupe2.Helper;
 
 namespace AppGroupe2.View
 {
@@ -30,6 +31,8 @@ namespace AppGroupe2.View
             m.Tel = txtTel.Text;
             m.IdSpecialite = int.Parse(cbbSpecialite.SelectedValue.ToString());
             m.Identifiant = txtIdentifiant.Text;
+            m.MotDePasse = CryptString.GetMd5Hash("P@sser1234");
+            m.IdRole=db.roles.Where(a=>a.Code=="Med").FirstOrDefault().Id;
             m.Status = false;
             db.Medecins.Add(m);
             db.SaveChanges();

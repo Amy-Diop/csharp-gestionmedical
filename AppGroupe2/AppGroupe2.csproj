@@ -20,9 +20,9 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>CppCoreCheckRules.ruleset</CodeAnalysisRuleSet>
@@ -215,10 +215,13 @@
     <Compile Include="frmMDI.Designer.cs">
       <DependentUpon>frmMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\CryptString.cs" />
     <Compile Include="Helper\GMailer.cs" />
     <Compile Include="Helper\Utils.cs" />
+    <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\ClasseReportTicketRv.cs" />
     <Compile Include="Model\GroupeSanguin.cs" />
+    <Compile Include="Model\Role.cs" />
     <Compile Include="Model\SelectListViewModel.cs" />
     <Compile Include="Model\Td_Erreur.cs" />
     <Compile Include="Report\rptTicketsRendezVous.cs">

@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnSeConnecter = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -107,12 +108,21 @@
             this.btnSeConnecter.UseVisualStyleBackColor = true;
             this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
+            // lblMessage
+            // 
+            this.lblMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblMessage.Location = new System.Drawing.Point(92, 525);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(284, 40);
+            this.lblMessage.TabIndex = 0;
+            // 
             // frmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 575);
+            this.ClientSize = new System.Drawing.Size(873, 584);
             this.ControlBox = false;
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnSeConnecter);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.txtMotDePasse);
@@ -137,6 +147,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnSeConnecter;
+        private System.Windows.Forms.Label lblMessage;
     }
 }
 

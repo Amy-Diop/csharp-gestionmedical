@@ -28,29 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.actionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seDeconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rougeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.medecinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rendezToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rendezVousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.actionToolStripMenuItem,
-            this.couleurToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(720, 33);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // actionToolStripMenuItem
             // 
@@ -64,46 +52,68 @@
             // seDeconnecterToolStripMenuItem
             // 
             this.seDeconnecterToolStripMenuItem.Name = "seDeconnecterToolStripMenuItem";
-            this.seDeconnecterToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.seDeconnecterToolStripMenuItem.Size = new System.Drawing.Size(237, 34);
             this.seDeconnecterToolStripMenuItem.Text = "&Se Deconnecter";
             this.seDeconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDeconnecterToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(237, 34);
             this.quitterToolStripMenuItem.Text = "&Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // couleurToolStripMenuItem
             // 
             this.couleurToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rougeToolStripMenuItem,
-            this.medecinToolStripMenuItem,
-            this.rendezToolStripMenuItem});
+            this.utilisateurToolStripMenuItem});
             this.couleurToolStripMenuItem.Name = "couleurToolStripMenuItem";
             this.couleurToolStripMenuItem.Size = new System.Drawing.Size(107, 29);
             this.couleurToolStripMenuItem.Text = "Parametre";
             // 
-            // rougeToolStripMenuItem
+            // utilisateurToolStripMenuItem
             // 
-            this.rougeToolStripMenuItem.Name = "rougeToolStripMenuItem";
-            this.rougeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.rougeToolStripMenuItem.Text = "Patient";
-            this.rougeToolStripMenuItem.Click += new System.EventHandler(this.rougeToolStripMenuItem_Click);
+            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.utilisateurToolStripMenuItem.Text = "Medecin";
+            this.utilisateurToolStripMenuItem.Click += new System.EventHandler(this.utilisateurToolStripMenuItem_Click);
             // 
-            // medecinToolStripMenuItem
+            // planifierToolStripMenuItem
             // 
-            this.medecinToolStripMenuItem.Name = "medecinToolStripMenuItem";
-            this.medecinToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.medecinToolStripMenuItem.Text = "Medecin";
-            this.medecinToolStripMenuItem.Click += new System.EventHandler(this.medecinToolStripMenuItem_Click);
+            this.planifierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rendezVousToolStripMenuItem,
+            this.patientToolStripMenuItem});
+            this.planifierToolStripMenuItem.Name = "planifierToolStripMenuItem";
+            this.planifierToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.planifierToolStripMenuItem.Text = "Planifier";
             // 
-            // rendezToolStripMenuItem
+            // rendezVousToolStripMenuItem
             // 
-            this.rendezToolStripMenuItem.Name = "rendezToolStripMenuItem";
-            this.rendezToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.rendezToolStripMenuItem.Text = "Rendez-Vous";
+            this.rendezVousToolStripMenuItem.Name = "rendezVousToolStripMenuItem";
+            this.rendezVousToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.rendezVousToolStripMenuItem.Text = "Rendez-Vous";
+            this.rendezVousToolStripMenuItem.Click += new System.EventHandler(this.rendezVousToolStripMenuItem_Click);
+            // 
+            // patientToolStripMenuItem
+            // 
+            this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
+            this.patientToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.patientToolStripMenuItem.Text = "Patient";
+            this.patientToolStripMenuItem.Click += new System.EventHandler(this.patientToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.actionToolStripMenuItem,
+            this.couleurToolStripMenuItem,
+            this.planifierToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(720, 33);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // frmMDI
             // 
@@ -127,13 +137,14 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem actionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seDeconnecterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem couleurToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rougeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem medecinToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rendezToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem utilisateurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planifierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rendezVousToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patientToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

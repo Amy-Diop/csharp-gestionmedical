@@ -27,7 +27,9 @@ namespace AppGroupe2.Model
 
         public DbSet<Td_Erreur> td_Erreurs { get; set; }
 
+        public DbSet<Admin> admins { get; set; }
 
+        public DbSet<Role> roles { get; set; }
 
 
 
