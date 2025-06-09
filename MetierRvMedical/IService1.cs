@@ -32,7 +32,10 @@ namespace MetierRvMedical
            bool AddMedecin(Medecin medecin);
            [OperationContract]
           Role GetRoleById(int id);
-         [OperationContract]
+        [OperationContract]
+        Role GetRoleByCode(string code);
+
+        [OperationContract]
          bool UpdateMedecin(Medecin agenda);
         [OperationContract]
         List<Medecin> GetListeMedecin();

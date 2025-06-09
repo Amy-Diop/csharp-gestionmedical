@@ -15,7 +15,7 @@ namespace AppGroupe2.View
 {
     public partial class frmMedecin : Form
     {
-        BdRvMedicalContext db = new BdRvMedicalContext();
+       
         ServiceMetier.IService1 service = new ServiceMetier.Service1Client();
         public frmMedecin()
         {
@@ -33,7 +33,12 @@ namespace AppGroupe2.View
             m.IdSpecialite = int.Parse(cbbSpecialite.SelectedValue.ToString());
             m.Identifiant = txtIdentifiant.Text;
             m.MotDePasse = CryptString.GetMd5Hash("P@sser1234");
-            m.IdRole=db.roles.Where(a=>a.Code=="Med").FirstOrDefault().Id;
+            var role = service.GetRoleByCode("Med");
+            if (role != null)
+            {
+                m.IdRole = role.Id;
+            }
+;
             m.Status = false;
             //db.Medecins.Add(m);
             //db.SaveChanges();

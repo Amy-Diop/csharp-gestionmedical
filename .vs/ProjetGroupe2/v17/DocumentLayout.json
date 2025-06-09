@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{305E5D85-392A-4400-B3E9-79E14AC05124}|MetierRvMedical\\MetierRvMedical.csproj|C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\metierrvmedical\\service1.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{305E5D85-392A-4400-B3E9-79E14AC05124}|MetierRvMedical\\MetierRvMedical.csproj|solutionrelative:metierrvmedical\\service1.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9F10A954-9D09-4F78-8355-04E5B51F9187}|AppGroupe2\\AppGroupe2.csproj|C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\appgroupe2\\view\\frmmedecin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F10A954-9D09-4F78-8355-04E5B51F9187}|AppGroupe2\\AppGroupe2.csproj|solutionrelative:appgroupe2\\view\\frmmedecin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{305E5D85-392A-4400-B3E9-79E14AC05124}|MetierRvMedical\\MetierRvMedical.csproj|C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\metierrvmedical\\service1.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{305E5D85-392A-4400-B3E9-79E14AC05124}|MetierRvMedical\\MetierRvMedical.csproj|solutionrelative:metierrvmedical\\service1.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{305E5D85-392A-4400-B3E9-79E14AC05124}|MetierRvMedical\\MetierRvMedical.csproj|C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\metierrvmedical\\iservice1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -264,7 +264,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 299,
-          "SelectedChildIndex": 25,
+          "SelectedChildIndex": 53,
           "Children": [
             {
               "$type": "Bookmark",
@@ -498,13 +498,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Service1.svc.cs",
               "DocumentMoniker": "C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\MetierRvMedical\\Service1.svc.cs",
               "RelativeDocumentMoniker": "MetierRvMedical\\Service1.svc.cs",
-              "ToolTip": "C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\MetierRvMedical\\Service1.svc.cs*",
-              "RelativeToolTip": "MetierRvMedical\\Service1.svc.cs*",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAqwIYAAAAkAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\MetierRvMedical\\Service1.svc.cs",
+              "RelativeToolTip": "MetierRvMedical\\Service1.svc.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAYwGwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T18:47:15.489Z",
               "EditorCaption": ""
@@ -796,9 +796,9 @@
               "Title": "IService1.cs",
               "DocumentMoniker": "C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\MetierRvMedical\\IService1.cs",
               "RelativeDocumentMoniker": "MetierRvMedical\\IService1.cs",
-              "ToolTip": "C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\MetierRvMedical\\IService1.cs*",
-              "RelativeToolTip": "MetierRvMedical\\IService1.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\MetierRvMedical\\IService1.cs",
+              "RelativeToolTip": "MetierRvMedical\\IService1.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAIwCIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T18:52:48.356Z",
               "EditorCaption": ""
@@ -841,13 +841,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "frmMedecin.cs",
               "DocumentMoniker": "C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\AppGroupe2\\View\\frmMedecin.cs",
               "RelativeDocumentMoniker": "AppGroupe2\\View\\frmMedecin.cs",
               "ToolTip": "C:\\Users\\SERIGNE M  DIOUF\\source\\repos\\csharp-gestionmedical\\AppGroupe2\\View\\frmMedecin.cs*",
               "RelativeToolTip": "AppGroupe2\\View\\frmMedecin.cs*",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAowJEAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAwwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-06T16:19:06.056Z",
               "EditorCaption": ""

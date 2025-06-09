@@ -103,6 +103,20 @@ namespace MetierRvMedical
             return db.roles.Find(id);
         }
 
+        public Role GetRoleByCode(string code)
+        {
+            var role = db.roles.FirstOrDefault(r => r.Code == code);
+            if (role == null) return null;
+            return new Role
+            {
+                Id = role.Id,
+                Code = role.Code,
+                Libelle = role.Libelle
+            };
+        }
+
+
+
         bool UpdateMedecin(Medecin agenda)
         {
             try
