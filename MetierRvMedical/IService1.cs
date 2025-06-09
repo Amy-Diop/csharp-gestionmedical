@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetierRvMedical.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,36 +13,45 @@ namespace MetierRvMedical
     [ServiceContract]
     public interface IService1
     {
+       
 
-        [OperationContract]
-        string GetData(int value);
+            [OperationContract]
+            string GetData(int value);
 
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+            [OperationContract]
+            CompositeType GetDataUsingDataContract(CompositeType composite);
+            [OperationContract]
+            bool AddAgenda(Agenda agenda);
+            [OperationContract]
+            bool UpdateAgenda(Agenda agenda);
+            [OperationContract]
+            List<Agenda> GetListeAgenda();
+            [OperationContract]
+            Medecin GetMedecinById(int id);
 
-        // TODO: ajoutez vos opérations de service ici
-    }
-
-
-    // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
+            // TODO: ajoutez vos opérations de service ici
         }
 
-        [DataMember]
-        public string StringValue
+
+        // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
+        [DataContract]
+        public class CompositeType
         {
-            get { return stringValue; }
-            set { stringValue = value; }
+            bool boolValue = true;
+            string stringValue = "Hello ";
+
+            [DataMember]
+            public bool BoolValue
+            {
+                get { return boolValue; }
+                set { boolValue = value; }
+            }
+
+            [DataMember]
+            public string StringValue
+            {
+                get { return stringValue; }
+                set { stringValue = value; }
+            }
         }
     }
-}

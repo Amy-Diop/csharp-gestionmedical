@@ -20,13 +20,13 @@ namespace AppGroupe2.View
         {
             InitializeComponent();
         }
-        BdRvMedicalContext db = new BdRvMedicalContext();
+       // BdRvMedicalContext db = new BdRvMedicalContext();
+        ServiceMetier.Service1Client service = new ServiceMetier.Service1Client ();
         private void frmAgenda_Load(object sender, EventArgs e)
         {
-            var m = db.Medecins.Find(idMedecin);
+            var m = service.GetMedecinById(idMedecin);//db.Medecins.Find(idMedecin);
             lblMedecin.Text = String.Format("N Ordre: {0}, Nom Prenom: {1}", m.NumeroOrdre, m.NomPrenom);
             lblIdMedecin.Text=m.IdU.ToString();
-            lblIdMedecin.Visible = false;
             ResetForm();
 
 
@@ -41,7 +41,7 @@ namespace AppGroupe2.View
         {
             try
             {
-                Agenda a = new Agenda();
+                ServiceMetier.Agenda a = new ServiceMetier.Agenda();
                 a.Crenaux = int.Parse(txtCreneau.Text);
                 a.HeureFin = txtHeureFin.Text;
                 a.HeureDebut = txtHeureDebut.Text;
@@ -50,8 +50,9 @@ namespace AppGroupe2.View
                 a.lieu = txtLieu.Text;
                 a.Titre = txtTitre.Text;
                 a.Statut = "Brouillon";
-                db.Agenda.Add(a);
-                db.SaveChanges();
+                //db.Agenda.Add(a);
+                //db.SaveChanges();
+                service.AddAgenda(a);
 
             }
             catch (Exception ex)
@@ -66,7 +67,7 @@ namespace AppGroupe2.View
         }
         private void ResetForm()
         {
-            dgAgenda.DataSource = db.Agenda.Where(a => a.DatePlanifie>=DateTime.Now && a.IdMedecin ==idMedecin).ToList();
+            dgAgenda.DataSource = service.GetListeAgenda().Where(a => a.DatePlanifie>=DateTime.Now && a.IdMedecin ==idMedecin).ToList();
             txtCreneau.Text = String.Empty;
             txtDateAgenda.Text = String.Empty;
             txtHeureDebut.Text = String.Empty;
