@@ -84,5 +84,71 @@ namespace MetierRvMedical
         {
             return db.Medecins.Find(id);
         }
+        public bool AddMedecin(Medecin medecin)
+        {
+            try
+            {
+                db.Medecins.Add(medecin);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+            }
+            return false;
+        }
+
+        public Role GetRoleById(int id)
+        {
+            return db.roles.Find(id);
+        }
+
+        bool UpdateMedecin(Medecin agenda)
+        {
+            try
+            {
+                db.Entry(agenda).State = EntityState.Modified;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+            }
+            return false;
+        }
+
+        List<Medecin> GetListeMedecin()
+        {
+            return  db.Medecins.ToList();
+        }
+
+        bool IService1.UpdateMedecin(Medecin agenda)
+        {
+            return UpdateMedecin(agenda);
+        }
+
+        List<Medecin> IService1.GetListeMedecin()
+        {
+            return GetListeMedecin();
+        }
+
+        public void SupprimerMedecin(int id)
+        {
+            var medecin = db.Medecins.Find(id);
+            if (medecin != null)
+            {
+                db.Medecins.Remove(medecin);
+                db.SaveChanges();
+            }
+        }
+
+        public List<Specialite> GetAllSpecialites()
+        {
+            return db.Specialite.Select(s => new Specialite
+            {
+                IdSpecialite = s.IdSpecialite,
+                NomSpecialite = s.NomSpecialite
+            }).ToList();
+        }
     }
 }

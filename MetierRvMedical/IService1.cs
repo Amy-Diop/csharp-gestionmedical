@@ -28,13 +28,28 @@ namespace MetierRvMedical
             List<Agenda> GetListeAgenda();
             [OperationContract]
             Medecin GetMedecinById(int id);
+            [OperationContract]
+           bool AddMedecin(Medecin medecin);
+           [OperationContract]
+          Role GetRoleById(int id);
+         [OperationContract]
+         bool UpdateMedecin(Medecin agenda);
+        [OperationContract]
+        List<Medecin> GetListeMedecin();
+        [OperationContract]
+        void SupprimerMedecin(int id);
 
-            // TODO: ajoutez vos opérations de service ici
-        }
+        [OperationContract]
+        List<Specialite> GetAllSpecialites();
+
+        // TODO: ajoutez vos opérations de service ici
 
 
-        // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
-        [DataContract]
+    }
+
+
+    // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
+    [DataContract]
         public class CompositeType
         {
             bool boolValue = true;

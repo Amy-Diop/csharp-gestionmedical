@@ -16,6 +16,7 @@ namespace AppGroupe2.View
     public partial class frmMedecin : Form
     {
         BdRvMedicalContext db = new BdRvMedicalContext();
+        ServiceMetier.IService1 service = new ServiceMetier.Service1Client();
         public frmMedecin()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace AppGroupe2.View
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            Medecin m = new Medecin();
+            ServiceMetier.Medecin m = new ServiceMetier.Medecin();
             m.Adresse = txtAdresse.Text;
             m.NumeroOrdre = txtNumeroOrdreMedecin.Text;
             m.Email = txtEmail.Text;
@@ -34,8 +35,9 @@ namespace AppGroupe2.View
             m.MotDePasse = CryptString.GetMd5Hash("P@sser1234");
             m.IdRole=db.roles.Where(a=>a.Code=="Med").FirstOrDefault().Id;
             m.Status = false;
-            db.Medecins.Add(m);
-            db.SaveChanges();
+            //db.Medecins.Add(m);
+            //db.SaveChanges();
+            service.AddMedecin(m);
             ResetForm();
         }
 
@@ -51,7 +53,17 @@ namespace AppGroupe2.View
             cbbSpecialite.DataSource = LoadCbbSpecialite();
             cbbSpecialite.ValueMember = "Value";
             cbbSpecialite.DisplayMember = "Text";
-            dgMedecin.DataSource = db.Medecins.Select(a=>new {a.IdU, a.NumeroOrdre, a.Identifiant, a.Specialite.NomSpecialite, a.NomPrenom, a.Tel, a.Email}).ToList();
+            dgMedecin.DataSource = service.GetListeMedecin()
+                .Select(a => new
+                {
+                    a.IdU,
+                    a.NumeroOrdre,
+                    a.Identifiant,
+                    NomSpecialite = a.Specialite?.NomSpecialite,
+                    a.NomPrenom,
+                    a.Tel,
+                    a.Email
+                }).ToList();
             txtNomPrenom.Focus();   
             
 
@@ -94,8 +106,8 @@ namespace AppGroupe2.View
 
         private void btnModidier_Click(object sender, EventArgs e)
         {
-            int? id = int.Parse(dgMedecin.CurrentRow.Cells[0].Value.ToString());
-            var m = db.Medecins.Find(id);
+            int id = int.Parse(dgMedecin.CurrentRow.Cells[0].Value.ToString());
+            var m = service.GetMedecinById(id);
             m.Adresse = txtAdresse.Text;
             m.NumeroOrdre = txtNumeroOrdreMedecin.Text;
             m.Email = txtEmail.Text;
@@ -103,18 +115,25 @@ namespace AppGroupe2.View
             m.Tel = txtTel.Text;
             m.IdSpecialite = int.Parse(cbbSpecialite.SelectedValue.ToString());
             m.Identifiant = txtIdentifiant.Text;
-            db.SaveChanges();
+            //db.SaveChanges();
+            service.UpdateMedecin(m);
             ResetForm();
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            int? id = int.Parse(dgMedecin.CurrentRow.Cells[0].Value.ToString());
-            var m = db.Medecins.Find(id);
-            db.Medecins.Remove(m);
-            db.SaveChanges();
-            ResetForm();
+            if (dgMedecin.CurrentRow != null)
+            {
+                int id = int.Parse(dgMedecin.CurrentRow.Cells[0].Value.ToString());
+
+                // Appel au service pour suppression
+                service.SupprimerMedecin(id);
+
+                // Actualisation du formulaire
+                ResetForm();
+            }
         }
+
 
         private void frmMedecin_Load(object sender, EventArgs e)
         {
@@ -124,22 +143,24 @@ namespace AppGroupe2.View
 
         private List<SelectListViewModel> LoadCbbSpecialite()
         {
-            var m = db.Specialite.ToList();
-            List<SelectListViewModel>  liste = new List<SelectListViewModel>();
-            SelectListViewModel b = new SelectListViewModel();
-            b.Text = "Selectionnez .......";
-            b.Value = "";
-            liste.Add(b);
-            foreach (var c in m) {
+            var specialites = service.GetAllSpecialites(); // appel via WCF
+            List<SelectListViewModel> liste = new List<SelectListViewModel>();
 
-                SelectListViewModel a = new SelectListViewModel();
-                a.Text = c.NomSpecialite.ToString();
-                a.Value = c.IdSpecialite.ToString();
-                liste.Add(a);
+            // Élément par défaut
+            liste.Add(new SelectListViewModel { Text = "Selectionnez .......", Value = "" });
+
+            foreach (var s in specialites)
+            {
+                liste.Add(new SelectListViewModel
+                {
+                    Text = s.NomSpecialite,
+                    Value = s.IdSpecialite.ToString()
+                });
             }
-            return liste;
 
+            return liste;
         }
+
 
         private void btnAgenda_Click(object sender, EventArgs e)
         {
