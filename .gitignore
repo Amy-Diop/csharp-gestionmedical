@@ -1,0 +1,58 @@
+# Fichiers et dossiers Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Dossiers de build
+bin/
+obj/
+
+# Fichiers de logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.cache
+*.bak
+*.swp
+
+# Fichiers de configuration machine locale
+*.dbmdl
+*.dbproj.schemaview
+*.pdb
+
+# Fichiers de publication/déploiement
+*.publish.xml
+
+# Packages
+packages/
+*.nupkg
+
+# Ignorer les dossiers de test resultats
+TestResults/
+
+# Fichiers de configuration auto-générés
+*.generated.cs
+*.g.cs
+*.g.i.cs
+
+# Dossiers ReSharper ou Rider
+_ReSharper*/
+*.DotSettings.user
+
+# Fichiers JetBrains Rider
+.idea/
+
+# Fichiers NuGet
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Windows Thumb.db
+Thumbs.db
+
+# Mac .DS_Store
+.DS_Store
