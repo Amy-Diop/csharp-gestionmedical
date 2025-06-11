@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using MetierRvMedical.Model;
 
 namespace MetierRvMedical
 {
@@ -20,7 +21,19 @@ namespace MetierRvMedical
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: ajoutez vos opérations de service ici
+        [OperationContract]
+        bool UpdateAgenda(Agenda agenda);
+
+        [OperationContract]
+        bool AddAgenda(Agenda agenda);
+        
+        [OperationContract]
+        List<Agenda> GetListeAgenda();
+
+        [OperationContract]
+        Medecin GetMedecinByID(int id);
     }
+
 
 
     // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.

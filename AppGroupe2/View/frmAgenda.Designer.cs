@@ -59,6 +59,7 @@
             this.btnChoisir.TabIndex = 48;
             this.btnChoisir.Text = "Choisir";
             this.btnChoisir.UseVisualStyleBackColor = true;
+            this.btnChoisir.Click += new System.EventHandler(this.btnChoisir_Click);
             // 
             // btnSupprimer
             // 

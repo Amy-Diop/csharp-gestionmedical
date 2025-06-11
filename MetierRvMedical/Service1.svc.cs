@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using MetierRvMedical.Model;
 
 namespace MetierRvMedical
 {
@@ -16,6 +18,8 @@ namespace MetierRvMedical
         {
             return string.Format("You entered: {0}", value);
         }
+       BdRvMedicalContext db = new BdRvMedicalContext();
+
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
@@ -29,5 +33,62 @@ namespace MetierRvMedical
             }
             return composite;
         }
+        /// <summary>
+        /// Return la liste des Agenda
+        /// </summary>
+        /// <returns></returns>
+        public List<Agenda> GetListeAgenda()
+        {
+            return db.Agenda.ToList();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="agenda"></param>
+        /// <returns></returns>
+        public bool AddAgenda (Agenda agenda) {
+    
+            try
+            {
+                db.Agenda.Add(agenda);
+                db.SaveChanges();
+                return true;
+
+            }
+            catch (Exception ex) {
+            
+                
+            }
+            return false;
+        }
+        public bool UpdateAgenda(Agenda agenda)
+        {
+            try
+            {
+                db .Entry(agenda).State = EntityState.Modified;
+                db.SaveChanges();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Medecin GetMedecinByID(int id)
+        {
+            return db.Medecins.Find(id);
+        }
+
+
     }
 }
