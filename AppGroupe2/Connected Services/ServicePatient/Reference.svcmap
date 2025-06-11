@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="32a705d0-14c7-4f2c-8b14-2eaf1a5cf516" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54208/Service/IPatient.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IPatient.disco" MetadataType="Disco" ID="0f2a779b-1502-4fe8-9b7e-2ed6e3226e5c" SourceId="1" SourceUrl="http://localhost:54208/Service/IPatient.svc?disco" />
+    <MetadataFile FileName="IPatient.xsd" MetadataType="Schema" ID="8f911164-cf23-4b55-bd0d-a89e5548f983" SourceId="1" SourceUrl="http://localhost:54208/Service/IPatient.svc?xsd=xsd0" />
+    <MetadataFile FileName="IPatient1.xsd" MetadataType="Schema" ID="8b0301b7-3ebd-430d-8ca5-6af570fe8fad" SourceId="1" SourceUrl="http://localhost:54208/Service/IPatient.svc?xsd=xsd1" />
+    <MetadataFile FileName="IPatient2.xsd" MetadataType="Schema" ID="a28cfed4-db78-4c33-8382-547816d71dce" SourceId="1" SourceUrl="http://localhost:54208/Service/IPatient.svc?xsd=xsd2" />
+    <MetadataFile FileName="IPatient.wsdl" MetadataType="Wsdl" ID="09ab3ff6-71ae-4a6d-b5a2-6b6ff1896a80" SourceId="1" SourceUrl="http://localhost:54208/Service/IPatient.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

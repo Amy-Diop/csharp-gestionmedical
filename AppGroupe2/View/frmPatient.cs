@@ -18,7 +18,10 @@ namespace AppGroupe2.View
         {
             InitializeComponent();
         }
-        BdRvMedicalContext db= new BdRvMedicalContext();
+        //BdRvMedicalContext db= new BdRvMedicalContext();
+
+        ServicePatient.IPatientClient service = new ServicePatient.IPatientClient();
+
 
         private void ResetForm()
         {
@@ -30,13 +33,13 @@ namespace AppGroupe2.View
             txtGroupeSanguin.Text = string.Empty;
             txtPoids.Text = string.Empty;
             txtTaille.Text = string.Empty;
-            dgPatient.DataSource= db.Patients.ToList();
+            dgPatient.DataSource = service.GetListePatients();
             txtNomPrenom.Focus();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            Patient p = new Patient();
+            ServicePatient.Patient p = new ServicePatient.Patient();
             p.NomPrenom=txtNomPrenom.Text;
             p.Adresse=txtAdresse.Text;
             p.Tel=txtTel.Text;
@@ -45,8 +48,9 @@ namespace AppGroupe2.View
             p.Poids=float.Parse(txtPoids.Text);
             p.Taille=float.Parse(txtTaille.Text);
             p.GroupeSanguin=txtGroupeSanguin.Text;
-            db.Patients.Add(p);
-            db.SaveChanges();
+            //db.Patients.Add(p);
+            //db.SaveChanges();
+            service.AddPatient(p);
             ResetForm();
         }
 
@@ -70,10 +74,11 @@ namespace AppGroupe2.View
 
         private void btnModidier_Click(object sender, EventArgs e)
         {
-            int? id = int.Parse(dgPatient.CurrentRow.Cells[4].Value.ToString());
-            if (id.HasValue) {
+            int id = int.Parse(dgPatient.CurrentRow.Cells[4].Value.ToString());
+            if (id != 0)
+            {
 
-                var p = db.Patients.Find(id);
+                var p = service.GetPatientById(id);
                 p.NomPrenom = txtNomPrenom.Text;
                 p.Adresse = txtAdresse.Text;
                 p.Tel = txtTel.Text;
@@ -82,7 +87,8 @@ namespace AppGroupe2.View
                 p.Poids = float.Parse(txtPoids.Text);
                 p.Taille = float.Parse(txtTaille.Text);
                 p.GroupeSanguin = txtGroupeSanguin.Text;
-                db.SaveChanges();
+                //db.SaveChanges();
+                service.AddPatient(p);
                 ResetForm();
 
             }
@@ -91,16 +97,11 @@ namespace AppGroupe2.View
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            int? id = int.Parse(dgPatient.CurrentRow.Cells[4].Value.ToString());
-            if (id.HasValue)
-            {
-                var p = db.Patients.Find(id);
-                db.Patients.Remove(p);
-                db.SaveChanges();
-                ResetForm();
-
-            }
+            int id = int.Parse(dgPatient.CurrentRow.Cells[4].Value.ToString());
+            service.SupprimerPatient(id);
+            ResetForm();
         }
+
 
         private void btnRendezVous_Click(object sender, EventArgs e)
         {
@@ -114,23 +115,12 @@ namespace AppGroupe2.View
 
         private void btnRecherche_Click(object sender, EventArgs e)
         {
-            var liste = db.Patients.ToList();
-            if(!string.IsNullOrEmpty(txtREmail.Text)) 
-            {
-                liste = liste.Where(a => a.Email.ToUpper() == txtREmail.Text.ToUpper()).ToList();
-
-            }
-
-            if (!string.IsNullOrEmpty(txtRTelephone.Text)) 
-            {
-                liste = liste.Where(a => a.Tel.ToUpper() == txtRTelephone.Text.ToUpper()).ToList();
-
-
-
-            }
-
-            dgPatient.DataSource = liste .ToList();
+            string email = txtREmail.Text.Trim();
+            string tel = txtRTelephone.Text.Trim();
+            var result = service.GetListePatients().ToList();
+            dgPatient.DataSource = result;
         }
+
 
         private void txtRtelephone_TextChanged(object sender, EventArgs e)
         {

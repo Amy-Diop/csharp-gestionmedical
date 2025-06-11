@@ -34,7 +34,7 @@ namespace MetierRvMedical
             return composite;
         }
         /// <summary>
-        /// Return la liste des Agenda
+        /// Retourne la liste des Agenda
         /// </summary>
         /// <returns></returns>
         public List<Agenda> GetListeAgenda()

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="IMedecin" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:54208/Service/IMedecin.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:54208/Service/IMedecin.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:54208/Service/IMedecin.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MetierRvMedical.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IIMedecin_GetMedecinById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMedecinById" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_GetMedecinById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMedecinByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_AddMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_AddMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_GetRoleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleById" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_GetRoleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_GetRoleByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleByCode" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_GetRoleByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_UpdateMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_UpdateMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_GetListeMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_GetListeMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_SupprimerMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_SupprimerMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_GetAllSpecialites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSpecialites" />
+  </wsdl:message>
+  <wsdl:message name="IIMedecin_GetAllSpecialites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSpecialitesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IIMedecin">
+    <wsdl:operation name="GetMedecinById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIMedecin/GetMedecinById" message="tns:IIMedecin_GetMedecinById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIMedecin/GetMedecinByIdResponse" message="tns:IIMedecin_GetMedecinById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIMedecin/AddMedecin" message="tns:IIMedecin_AddMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIMedecin/AddMedecinResponse" message="tns:IIMedecin_AddMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIMedecin/GetRoleById" message="tns:IIMedecin_GetRoleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIMedecin/GetRoleByIdResponse" message="tns:IIMedecin_GetRoleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIMedecin/GetRoleByCode" message="tns:IIMedecin_GetRoleByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIMedecin/GetRoleByCodeResponse" message="tns:IIMedecin_GetRoleByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIMedecin/UpdateMedecin" message="tns:IIMedecin_UpdateMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIMedecin/UpdateMedecinResponse" message="tns:IIMedecin_UpdateMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListeMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIMedecin/GetListeMedecin" message="tns:IIMedecin_GetListeMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIMedecin/GetListeMedecinResponse" message="tns:IIMedecin_GetListeMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIMedecin/SupprimerMedecin" message="tns:IIMedecin_SupprimerMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIMedecin/SupprimerMedecinResponse" message="tns:IIMedecin_SupprimerMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSpecialites">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIMedecin/GetAllSpecialites" message="tns:IIMedecin_GetAllSpecialites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIMedecin/GetAllSpecialitesResponse" message="tns:IIMedecin_GetAllSpecialites_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IIMedecin" type="tns:IIMedecin">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMedecinById">
+      <soap:operation soapAction="http://tempuri.org/IIMedecin/GetMedecinById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMedecin">
+      <soap:operation soapAction="http://tempuri.org/IIMedecin/AddMedecin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleById">
+      <soap:operation soapAction="http://tempuri.org/IIMedecin/GetRoleById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleByCode">
+      <soap:operation soapAction="http://tempuri.org/IIMedecin/GetRoleByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMedecin">
+      <soap:operation soapAction="http://tempuri.org/IIMedecin/UpdateMedecin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeMedecin">
+      <soap:operation soapAction="http://tempuri.org/IIMedecin/GetListeMedecin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerMedecin">
+      <soap:operation soapAction="http://tempuri.org/IIMedecin/SupprimerMedecin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSpecialites">
+      <soap:operation soapAction="http://tempuri.org/IIMedecin/GetAllSpecialites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IMedecin">
+    <wsdl:port name="BasicHttpBinding_IIMedecin" binding="tns:BasicHttpBinding_IIMedecin">
+      <soap:address location="http://localhost:54208/Service/IMedecin.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
