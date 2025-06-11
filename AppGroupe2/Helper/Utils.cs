@@ -69,7 +69,7 @@ namespace AppGroupe2.Helper
             using (EventLog eventLog = new EventLog("Application"))
             {
                 eventLog.Source = "GestionRVMedical";
-               // eventLog.WriteEntry(string.Format("date: {0}, libelle: {1}, description {2}", DateTime.Now, libelle, erreur), EventLogEntryType.Information, 101, 1);
+                eventLog.WriteEntry(string.Format("date: {0}, libelle: {1}, description {2}", DateTime.Now, libelle, erreur), EventLogEntryType.Information, 101, 1);
             }
         }
 

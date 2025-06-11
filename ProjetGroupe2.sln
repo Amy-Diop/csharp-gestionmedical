@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppGroupe2", "AppGroupe2\AppGroupe2.csproj", "{9F10A954-9D09-4F78-8355-04E5B51F9187}"
-	ProjectSection(ProjectDependencies) = postProject
-		{305E5D85-392A-4400-B3E9-79E14AC05124} = {305E5D85-392A-4400-B3E9-79E14AC05124}
-	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupRvMedical", "SetupRvMedical\SetupRvMedical.vdproj", "{64CED1E4-7ECA-47E3-B56E-F5D825201D61}"
 EndProject
@@ -31,8 +28,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4749929B-3DAB-496F-A208-1F93D64D0A67}
 	EndGlobalSection
 EndGlobal
