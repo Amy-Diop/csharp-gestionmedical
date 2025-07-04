@@ -81,5 +81,10 @@ namespace AppGroupe2.View
         {
 
         }
+
+        private void dgAgenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

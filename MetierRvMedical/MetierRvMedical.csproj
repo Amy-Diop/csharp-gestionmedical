@@ -182,6 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service1.svc" />
+    <Content Include="Service\IISoin.svc" />
     <Content Include="Service\IMedecin.svc" />
     <Content Include="Service\IPatient.svc" />
     <Content Include="Service\ISecretaire.svc" />
@@ -208,9 +209,13 @@
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\IIISoin.cs" />
     <Compile Include="Service\IIMedecin.cs" />
     <Compile Include="Service\IIPatient.cs" />
     <Compile Include="Service\IISecretaire.cs" />
+    <Compile Include="Service\IISoin.svc.cs">
+      <DependentUpon>IISoin.svc</DependentUpon>
+    </Compile>
     <Compile Include="Service\IMedecin.svc.cs">
       <DependentUpon>IMedecin.svc</DependentUpon>
     </Compile>
