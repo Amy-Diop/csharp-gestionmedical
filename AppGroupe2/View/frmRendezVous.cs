@@ -39,5 +39,10 @@ namespace AppGroupe2.View
             //f.Enabled = true;
 
         }
+
+        private void dgMedecin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MetierRvMedical.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -12,29 +13,54 @@ namespace MetierRvMedical.Service
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez IISoin.svc ou IISoin.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class IISoin : IIISoin
     {
+        BdRvMedicalContext db = new BdRvMedicalContext();
         public bool AddSoin(Soin soin)
         {
-            throw new NotImplementedException();
+            try
+            {
+                db.soins.Add(soin);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+            }
+            return false;
         }
 
         public List<Soin> GetListeSoins()
         {
-            throw new NotImplementedException();
+            return db.soins.ToList();
         }
 
-        public Patient GetSoinById(int id)
+        public Soin GetSoinById(int id)
         {
-            throw new NotImplementedException();
+            return db.soins.Find(id);
+           
         }
 
         public void SupprimerSoin(int id)
         {
-            throw new NotImplementedException();
+            var soin = db.soins.Find(id);
+            if (soin != null)
+            {
+                db.soins.Remove(soin);
+                db.SaveChanges();
+            }
         }
 
         public bool UpdateSoin(Soin soin)
         {
-            throw new NotImplementedException();
+            try
+            {
+                db.Entry(soin).State = EntityState.Modified;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+            }
+            return false;
         }
     }
 }

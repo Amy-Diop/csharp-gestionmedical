@@ -358,3 +358,4 @@ C:\Users\SERIGNE M  DIOUF\source\repos\charp version final\csharp-gestionmedical
 C:\Users\SERIGNE M  DIOUF\source\repos\charp version final\csharp-gestionmedical\AppGroupe2\obj\Debug\AppGroupe2.csproj.Up2Date
 C:\Users\SERIGNE M  DIOUF\source\repos\charp version final\csharp-gestionmedical\AppGroupe2\obj\Debug\AppGroupe2.exe
 C:\Users\SERIGNE M  DIOUF\source\repos\charp version final\csharp-gestionmedical\AppGroupe2\obj\Debug\AppGroupe2.pdb
+C:\Users\SERIGNE M  DIOUF\source\repos\charp version final\csharp-gestionmedical\AppGroupe2\obj\Debug\AppGroupe2.View.frmSoin.resources

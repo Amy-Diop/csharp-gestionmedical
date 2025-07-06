@@ -174,5 +174,10 @@ namespace AppGroupe2.View
             a.idMedecin = int.Parse(dgMedecin.CurrentRow.Cells[0].Value.ToString());
             a.Show();
         }
+
+        private void dgMedecin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace MetierRvMedical.Model
 
 
 
+        public DbSet<Soin> soins { get; set; }
 
 
     }

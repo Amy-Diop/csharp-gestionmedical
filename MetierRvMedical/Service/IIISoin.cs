@@ -26,6 +26,6 @@ namespace MetierRvMedical.Service
         void SupprimerSoin(int id);
 
         [OperationContract]
-        Patient GetSoinById(int id);
+        Soin GetSoinById(int id);
     }
 }

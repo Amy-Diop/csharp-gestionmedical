@@ -300,10 +300,10 @@ namespace AppGroupe2.ServiceSoin {
         System.Threading.Tasks.Task SupprimerSoinAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIISoin/GetSoinById", ReplyAction="http://tempuri.org/IIISoin/GetSoinByIdResponse")]
-        AppGroupe2.ServiceSoin.Patient GetSoinById(int id);
+        AppGroupe2.ServiceSoin.Soin GetSoinById(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIISoin/GetSoinById", ReplyAction="http://tempuri.org/IIISoin/GetSoinByIdResponse")]
-        System.Threading.Tasks.Task<AppGroupe2.ServiceSoin.Patient> GetSoinByIdAsync(int id);
+        System.Threading.Tasks.Task<AppGroupe2.ServiceSoin.Soin> GetSoinByIdAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -365,11 +365,11 @@ namespace AppGroupe2.ServiceSoin {
             return base.Channel.SupprimerSoinAsync(id);
         }
         
-        public AppGroupe2.ServiceSoin.Patient GetSoinById(int id) {
+        public AppGroupe2.ServiceSoin.Soin GetSoinById(int id) {
             return base.Channel.GetSoinById(id);
         }
         
-        public System.Threading.Tasks.Task<AppGroupe2.ServiceSoin.Patient> GetSoinByIdAsync(int id) {
+        public System.Threading.Tasks.Task<AppGroupe2.ServiceSoin.Soin> GetSoinByIdAsync(int id) {
             return base.Channel.GetSoinByIdAsync(id);
         }
     }
