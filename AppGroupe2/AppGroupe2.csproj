@@ -440,6 +440,7 @@
     <None Include="README" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Release Notes.txt" />
     <None Include="Connected Services\ServiceMetier\Service1.disco" />
     <None Include="Connected Services\ServiceMetier\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceMetier\configuration.svcinfo" />
@@ -479,7 +480,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>erreur1.cs</LastGenOutput>
     </Content>
-    <Content Include="Release Notes.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

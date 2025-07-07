@@ -34,13 +34,13 @@ namespace AppGroupe2.Model
 
         public DbSet<Role> roles { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            // Supprimer tout schéma par défaut (évite dbo.)
-            modelBuilder.HasDefaultSchema("");
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    // Supprimer tout schéma par défaut (évite dbo.)
+        //    modelBuilder.HasDefaultSchema("");
 
-            base.OnModelCreating(modelBuilder);
-        }
+        //    base.OnModelCreating(modelBuilder);
+        //}
 
 
 
