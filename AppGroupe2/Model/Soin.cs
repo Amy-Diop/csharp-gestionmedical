@@ -10,17 +10,17 @@ namespace AppGroupe2.Model
 
         [Required]
         [StringLength(100)]
-        public string Nom { get; set; }  // Nom du soin
+        public string Nom { get; set; }
 
         [StringLength(250)]
-        public string Description { get; set; }  // Description optionnelle
+        public string Description { get; set; }  
 
         [Range(0, 10000)]
-        public decimal Prix { get; set; } // Prix du soin
+        public decimal Prix { get; set; } 
         [MaxLength(200)]
-        public string libelle { get; set; }
+        public string Libelle { get; set; }
 
-        public float cout { get; set; }
+        public float Cout { get; set; }
     
 
     }

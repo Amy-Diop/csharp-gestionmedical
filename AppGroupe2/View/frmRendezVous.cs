@@ -98,7 +98,7 @@ namespace AppGroupe2.View
             }
         }
 
-        private void dgMedecin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgRendezVous_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
