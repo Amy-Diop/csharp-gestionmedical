@@ -362,3 +362,4 @@ C:\Users\SERIGNE M  DIOUF\source\repos\charp version final\csharp-gestionmedical
 C:\Users\SERIGNE M  DIOUF\source\repos\charp version final\csharp-gestionmedical\AppGroupe2\obj\Debug\AppGroupe2.pdb
 C:\Users\SERIGNE M  DIOUF\source\repos\charp version final\csharp-gestionmedical\AppGroupe2\obj\Debug\AppGroupe2.View.frmSoin.resources
 >>>>>>> 7dca2b7eded134c4a8b98e40ec5cd32df444e37b
+C:\Users\easys\source\repos\ProjetGroupe2\AppGroupe2\obj\Debug\AppGroupe2.View.frmSoin.resources

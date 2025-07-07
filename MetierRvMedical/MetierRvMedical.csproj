@@ -182,6 +182,7 @@
     <Content Include="Service\IISoin.svc" />
     <Content Include="Service\IMedecin.svc" />
     <Content Include="Service\IPatient.svc" />
+    <Content Include="Service\IRendezVous.svc" />
     <Content Include="Service\ISecretaire.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -209,6 +210,7 @@
     <Compile Include="Service\IIISoin.cs" />
     <Compile Include="Service\IIMedecin.cs" />
     <Compile Include="Service\IIPatient.cs" />
+    <Compile Include="Service\IIRendezVous.cs" />
     <Compile Include="Service\IISecretaire.cs" />
     <Compile Include="Service\IISoin.svc.cs">
       <DependentUpon>IISoin.svc</DependentUpon>
@@ -218,6 +220,9 @@
     </Compile>
     <Compile Include="Service\IPatient.svc.cs">
       <DependentUpon>IPatient.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Service\IRendezVous.svc.cs">
+      <DependentUpon>IRendezVous.svc</DependentUpon>
     </Compile>
     <Compile Include="Service\ISecretaire.svc.cs">
       <DependentUpon>ISecretaire.svc</DependentUpon>
