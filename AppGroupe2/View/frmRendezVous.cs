@@ -97,5 +97,10 @@ namespace AppGroupe2.View
                 cbSoin.Text = rv.Soin?.Nom;
             }
         }
+
+        private void dgMedecin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

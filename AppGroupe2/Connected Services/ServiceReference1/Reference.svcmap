@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="a8e4afe4-bb63-46ab-813f-707d7d53e0f3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54208/Service/IISoin.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IISoin.wsdl" MetadataType="Wsdl" ID="8978eff3-d6f0-40c8-868b-08298d829c9b" SourceId="1" SourceUrl="http://localhost:54208/Service/IISoin.svc?wsdl" />
+    <MetadataFile FileName="IISoin.xsd" MetadataType="Schema" ID="8b705f8f-5fbf-4919-81c2-a0b4f50b7a44" SourceId="1" SourceUrl="http://localhost:54208/Service/IISoin.svc?xsd=xsd1" />
+    <MetadataFile FileName="IISoin1.xsd" MetadataType="Schema" ID="055d9fca-f973-47ef-9dc0-90d8a1f8557c" SourceId="1" SourceUrl="http://localhost:54208/Service/IISoin.svc?xsd=xsd2" />
+    <MetadataFile FileName="IISoin2.xsd" MetadataType="Schema" ID="72c4fa0f-062e-4c6e-9054-366abb5040b1" SourceId="1" SourceUrl="http://localhost:54208/Service/IISoin.svc?xsd=xsd0" />
+    <MetadataFile FileName="IISoin.disco" MetadataType="Disco" ID="65c40e3f-d0fa-4e87-ad57-3514ad1dc850" SourceId="1" SourceUrl="http://localhost:54208/Service/IISoin.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
