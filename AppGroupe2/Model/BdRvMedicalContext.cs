@@ -6,6 +6,9 @@ namespace AppGroupe2.Model
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class BdRvMedicalContext:DbContext
     {
+        internal object IdSoin;
+        internal object Soins;
+
         public BdRvMedicalContext() :base("bdRvMedicalContext") { }
 
         public DbSet<Personne> Personnes { get; set; }
