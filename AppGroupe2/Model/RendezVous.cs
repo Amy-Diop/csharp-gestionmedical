@@ -23,6 +23,7 @@ namespace AppGroupe2.Model
         public int? IdPatient { get; set; }
         [ForeignKey("IdPatient")]
         public virtual Patient patient { get; set; }
+        public virtual Patient Patient { get; set; }
 
         public int? IdMedecin { get; set; }
         [ForeignKey("IdMedecin")]
