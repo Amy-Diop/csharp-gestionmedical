@@ -114,5 +114,10 @@ namespace AppGroupe2.View
                 cbSoin.Text = rv.Soin?.Nom;
             }
         }
+
+        private void dgRendezVous_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

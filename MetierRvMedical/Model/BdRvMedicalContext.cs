@@ -6,7 +6,11 @@ namespace MetierRvMedical.Model
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class BdRvMedicalContext:DbContext
     {
-        public BdRvMedicalContext() :base("bdRvMedicalContext") { }
+        public BdRvMedicalContext() :base("bdRvMedicalContext") { 
+        
+            this.Configuration.ProxyCreationEnabled = false;
+            this.Configuration.LazyLoadingEnabled = false;
+        }
 
         public DbSet<Personne> Personnes { get; set; }
         public DbSet<Patient> Patients { get; set; }
