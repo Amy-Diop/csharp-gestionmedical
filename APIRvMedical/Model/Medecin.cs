@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace APIRvMedical.Model
 {
@@ -15,8 +15,6 @@ namespace APIRvMedical.Model
         public string NumeroOrdre { get; set; }
 
         public virtual ICollection<Agenda> Agendas { get; set; }
-        public object Nom { get; internal set; }
-        public object Prenom { get; internal set; }
-        public object Id { get; internal set; }
+        public virtual ICollection<RendezVous> RendezVous { get; set; }
     }
 }

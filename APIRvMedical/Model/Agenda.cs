@@ -3,40 +3,39 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
 namespace APIRvMedical.Model
 {
     public class Agenda
     {
         [Key]
-        public int IdAgenda {  get; set; }
+        public int IdAgenda { get; set; } // ✅ Clé primaire
 
-        public DateTime? DatePlanifie {  get; set; } 
+        public DateTime? DatePlanifie { get; set; }
 
+        [MaxLength(100)]
         public string Titre { get; set; }
 
-        public string HeureDebut {  get; set; }
+        [MaxLength(10)]
+        public string HeureDebut { get; set; }
 
-
-        public string HeureFin {  get; set; }
+        [MaxLength(10)]
+        public string HeureFin { get; set; }
 
         public int Crenaux { get; set; }
 
-        public string lieu {  get; set; }
+        [MaxLength(200)]
+        public string Lieu { get; set; }
 
-        public string Statut { get; set ; }
+        [MaxLength(20)]
+        public string Statut { get; set; }
 
+        // ForeignKey vers Medecin
         public int IdMedecin { get; set; }
+
         [ForeignKey("IdMedecin")]
+        public virtual Medecin Medecin { get; set; }
 
-        public Medecin Medecin { get; set; }
-
-        public virtual ICollection<RendezVous> rendezVous { get; set; }
-
-
-
-
-
-
+        // Liste des RendezVous liés
+        public virtual ICollection<RendezVous> RendezVous { get; set; }
     }
 }

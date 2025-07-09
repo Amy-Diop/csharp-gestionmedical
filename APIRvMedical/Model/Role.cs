@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace APIRvMedical.Model
 {
     public class Role
     {
         [Key]
-        public int Id { get; set; }
+        public int IdRole { get; set; }
 
-        [MaxLength(10)]
+        [Required, MaxLength(50)]
         public string Code { get; set; }
 
-        [MaxLength(30)]
+        [Required, MaxLength(100)]
         public string Libelle { get; set; }
     }
 }

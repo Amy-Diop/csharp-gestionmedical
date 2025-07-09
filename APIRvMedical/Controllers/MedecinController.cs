@@ -1,158 +1,79 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web.Http;
 using APIRvMedical.Model;
 
 namespace APIRvMedical.Controllers
 {
-    [RoutePrefix("api/medecins")]
     public class MedecinController : ApiController
     {
-        private BdRvMedicalContext db = new BdRvMedicalContext();
+        private readonly BdRvMedicalContext db = new BdRvMedicalContext();
 
-        // GET: api/medecins
+        // GET: api/Medecin
         [HttpGet]
-        [Route("")]
-        public IHttpActionResult GetAllMedecins()
+        public IEnumerable<Medecin> GetMedecins()
         {
-            var medecins = db.Medecins
-                .Select(m => new
-                {
-                    m.Id,
-                    m.Nom,
-                    m.Prenom,
-                    m.NumeroOrdre,
-                    Specialite = m.Specialite != null ? new
-                    {
-                        m.Specialite.IdSpecialite,
-                        m.Specialite.NomSpecialite
-                    } : null
-                }).ToList();
-
-            return Ok(medecins);
+            return db.Medecins.ToList();
         }
 
-        // GET: api/medecins/5
+        // GET: api/Medecin/5
         [HttpGet]
-        [Route("{id:int}")]
-        public IHttpActionResult GetMedecinById(int id)
+        public IHttpActionResult GetMedecin(int id)
         {
-            var medecin = db.Medecins
-                .Where(m => m.Id == id)
-                .Select(m => new
-                {
-                    m.Id,
-                    m.Nom,
-                    m.Prenom,
-                    m.NumeroOrdre,
-                    Specialite = m.Specialite != null ? new
-                    {
-                        m.Specialite.IdSpecialite,
-                        m.Specialite.NomSpecialite
-                    } : null
-                }).FirstOrDefault();
-
+            var medecin = db.Medecins.Find(id);
             if (medecin == null)
-            {
                 return NotFound();
-            }
 
             return Ok(medecin);
         }
 
-        // POST: api/medecins
+        // POST: api/Medecin
         [HttpPost]
-        [Route("")]
-        public IHttpActionResult AddMedecin([FromBody] Medecin medecin)
+        public IHttpActionResult PostMedecin(Medecin medecin)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
 
-            try
-            {
-                db.Medecins.Add(medecin);
-                db.SaveChanges();
-                return CreatedAtRoute("DefaultApi", new { id = medecin.Id }, medecin);
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
+            db.Medecins.Add(medecin);
+            db.SaveChanges();
+
+            return CreatedAtRoute("DefaultApi", new { id = medecin.IdU }, medecin); // ✅ IdU ici
         }
 
-        // PUT: api/medecins/5
+        // PUT: api/Medecin/5
         [HttpPut]
-        [Route("{id:int}")]
-        public IHttpActionResult UpdateMedecin(int id, [FromBody] Medecin medecin)
+        public IHttpActionResult PutMedecin(int id, Medecin medecin)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
 
-            var existingMedecin = db.Medecins.Find(id);
-            if (existingMedecin == null)
-            {
+            var existing = db.Medecins.Find(id);
+            if (existing == null)
                 return NotFound();
-            }
 
-            // Mettre à jour les propriétés
-            existingMedecin.Nom = medecin.Nom;
-            existingMedecin.Prenom = medecin.Prenom;
-            existingMedecin.NumeroOrdre = medecin.NumeroOrdre;
-            existingMedecin.IdSpecialite = medecin.IdSpecialite;
+            existing.NumeroOrdre = medecin.NumeroOrdre;
+            existing.IdSpecialite = medecin.IdSpecialite;
+            existing.NomPrenom = medecin.NomPrenom;
+            existing.Email = medecin.Email;
+            existing.Tel = medecin.Tel;
+            existing.Adresse = medecin.Adresse;
 
-            try
-            {
-                db.SaveChanges();
-                return StatusCode(HttpStatusCode.NoContent);
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
+            db.SaveChanges();
+            return Ok(existing);
         }
 
-        // DELETE: api/medecins/5
+        // DELETE: api/Medecin/5
         [HttpDelete]
-        [Route("{id:int}")]
         public IHttpActionResult DeleteMedecin(int id)
         {
             var medecin = db.Medecins.Find(id);
             if (medecin == null)
-            {
                 return NotFound();
-            }
 
-            try
-            {
-                db.Medecins.Remove(medecin);
-                db.SaveChanges();
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-        }
+            db.Medecins.Remove(medecin);
+            db.SaveChanges();
 
-        // GET: api/medecins/specialites
-        [HttpGet]
-        [Route("specialites")]
-        public IHttpActionResult GetAllSpecialites()
-        {
-            var specialites = db.Specialite
-                .Select(s => new
-                {
-                    s.IdSpecialite,
-                    s.NomSpecialite
-                }).ToList();
-
-            return Ok(specialites);
+            return Ok();
         }
     }
 }

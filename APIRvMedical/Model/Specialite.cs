@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace APIRvMedical.Model
 {
@@ -11,13 +6,11 @@ namespace APIRvMedical.Model
     {
         [Key]
         public int IdSpecialite { get; set; }
+
         [Required, MaxLength(10)]
         public string CodeSpecialite { get; set; }
 
         [Required, MaxLength(100)]
         public string NomSpecialite { get; set; }
-
-
-
     }
 }

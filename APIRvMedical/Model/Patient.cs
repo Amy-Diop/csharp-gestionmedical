@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace APIRvMedical.Model
 {
-    public class Patient: Personne
+    public class Patient : Personne
     {
         [Required, MaxLength(3)]
         public string GroupeSanguin { get; set; }
@@ -17,8 +13,7 @@ namespace APIRvMedical.Model
 
         [Required]
         public float? Taille { get; set; }
+
         public DateTime? DateNaissance { get; set; }
-
     }
-
 }
